@@ -81,28 +81,6 @@ Labels below match the silkscreen on the board.
 - 4 × M3 mounting holes (M1–M3).
 - **KEEP-OUT ZONE** — no copper under the ESP32-S3 antenna, to preserve Wi-Fi/BLE range.
 
----|---|---|
-| J1 — POWER | +3.3 V, GND | Board supply |
-| J3 — GPS (JST-SH 6) | I²C (SCL/SDA), UART (TX/RX), +3.3 V, GND | GNSS receiver + compass |
-| J4 — SERVO_L | PWM signal | Left elevon servo |
-| J5 — SERVO_R | PWM signal | Right elevon servo |
-| J6 — ESC | PWM signal, GND | EDF speed controller |
-| USB-C | USB 2.0 | Programming / telemetry over cable |
-
----
-
-## v1 limitations → v2
-
-Lessons learned from the first board, to be addressed in the next revision:
-
-| v1 limitation | Planned v2 improvement |
-|---|---|
-| BMI088 interrupt lines not routed — sensors are polled on a timer | Route data-ready interrupts for jitter-free sampling |
-| No 6S battery voltage measurement | Add a voltage divider on a free ADC1 input |
-| No airspeed sensor | Add a differential pressure sensor (pitot) |
-| Servo connectors carry the signal only (no ground) | Full 3-pin servo connectors |
-| No UART link to the RDK X5 companion computer | Dedicated UART connector |
-| Tight decoupling on the ESP32-S3 3.3 V rail | Increase bulk and local decoupling |
 
 ---
 
