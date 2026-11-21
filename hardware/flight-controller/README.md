@@ -53,7 +53,7 @@ Labels below match the silkscreen on the board.
 | J3 | GPS | JST-SH 6-pin | SCL, SDA, RX, TX, +3.3 V, GND | **M100-5883 GNSS + compass** — UART for GNSS data, I²C for the compass (4.7 kΩ pull-ups R10/R11) |
 | J4 | SERVO_L | JST-PH 2-pin | SIGNAL | **Left elevon servo** (PWM) |
 | J5 | SERVO_R | JST-PH 2-pin | SIGNAL | **Right elevon servo** (PWM) |
-| J6 | ESC | JST-PH 2-pin | SIGNAL, GND | **Hobbywing 120A V4 ESC** driving the EDF (PWM throttle) |
+| J6 | ESC | JST-PH 2-pin | SIGNAL, GND | **Hobbywing 80A V4 ESC** driving the EDF (PWM throttle) |
 | J2 | — | USB-C | USB 2.0 | Computer — flashing, serial monitor, data logging (ESD-protected by U3) |
 
 > The board is powered **only** through J1: USB does not supply the board.
