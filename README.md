@@ -83,13 +83,13 @@ Editable diagram: [`docs/architecture/`](docs/architecture/) · Background paper
 | Propulsion | EDF + Hobbywing 120A V4 ESC |
 | Power | 6S LiPo battery |
 | Actuators | High-torque servos on two elevons |
-| Flight controller | Custom board — ESP32-S3 + IMU, with an integrated PDB (power distribution board) feeding all subsystems *(in development)* |
+| Flight controller | Custom board — ESP32-S3 + BMI088 IMU + BMP390 barometer, with a PDB (power distribution board) feeding all subsystems — [details](hardware/flight-controller/) |
 | Navigation | GPS M100-5883 (GPS + compass) |
 | Companion computer | D-Robotics RDK X5 (vision, embedded AI, autonomy) |
 
 ## Tech stack
 
-**CAD** Fusion · **Fabrication** FDM 3D printing (PLA-LW, PETG) · **Firmware** C/C++ on ESP32-S3 (ESP-IDF, FreeRTOS) ·
+**CAD** Fusion · **Fabrication** FDM 3D printing (PLA-LW, PETG) · **Electronics** KiCad · **Firmware** C++ on ESP32-S3 (Arduino framework) ·
 **Control** INDI, complementary & Butterworth filtering · **Simulation** MATLAB / Simulink ·
 **Companion** RDK X5, ROS 2, Python · **Docs** draw.io, Markdown
 
@@ -100,6 +100,7 @@ Editable diagram: [`docs/architecture/`](docs/architecture/) · Background paper
 - [x] Airframe design in Fusion (wing, fuselage, EDF intake & mount, electronics tray)
 - [x] Control architecture (filtering + INDI attitude loop)
 - [x] Airframe printing & assembly
+- [x] Flight controller v1: design & fabrication
 - [ ] Propulsion bench test (thrust, current, temperature)
 - [ ] Simulink model & INDI tuning
 - [ ] Flight controller firmware (IMU drivers, filtering, INDI, servo output)
@@ -107,6 +108,7 @@ Editable diagram: [`docs/architecture/`](docs/architecture/) · Background paper
 - [ ] First stabilised flight
 - [ ] Outer loop: altitude / airspeed hold, GPS navigation
 - [ ] Onboard vision on the RDK X5
+- [ ] Flight controller v2
 
 ---
 
@@ -119,6 +121,7 @@ AD-1/
 │   ├── sizing/         # Sizing calculations (thrust, mass budget, CG…)
 │   ├── devlog/         # Development log
 │   └── references.md   # Scientific references
+├── hardware/           # Flight controller PCB (schematic, renders)
 ├── firmware/           # Flight controller firmware (ESP32-S3)
 ├── companion/          # RDK X5 software (vision, autonomy)
 ├── simulation/         # Models and controller tuning

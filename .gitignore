@@ -17,6 +17,26 @@
 *.gcode
 *.bgcode
 
+# --- PCB sources (KiCad) & fabrication files: NEVER PUBLISH -
+*.kicad_pcb
+*.kicad_sch
+*.kicad_pro
+*.kicad_prl
+*.kicad_sym
+*.kicad_mod
+*-backups/
+fp-info-cache
+*.gbr
+*.gbl
+*.gtl
+*.gbo
+*.gto
+*.gbs
+*.gts
+*.drl
+*.pos
+gerber*/
+
 # --- Copyrighted papers / documents --------------------------
 Articles/
 *.pdf
